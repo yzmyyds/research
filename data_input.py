@@ -60,7 +60,21 @@ print(f"填充值 (线性插值): {filled_value:.6f}")
 
 data=data_linear
 print("全局缺失值统计:\n", data.isnull().sum())
-
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  
+plt.rcParams['axes.unicode_minus'] = False 
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X = scaler.fit_transform(data.drop(columns=['时间']))
+# plt.figure(figsize=(16,12))
+plt.xlabel("Engine Factor")
+plt.ylabel("Thrust")
+plt.title("Factors vs Thrust")
+for i in range(27) :
+    plt.plot(data["时间"],X[:][i])
+plt.savefig("Factors_vs_Thrust")
+plt.close()
+plt.show()
+print(X)
 
 
 #2.Handle unormal values 
