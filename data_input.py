@@ -60,23 +60,6 @@ print(f"填充值 (线性插值): {filled_value:.6f}")
 
 data=data_linear
 print("全局缺失值统计:\n", data.isnull().sum())
-plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  
-plt.rcParams['axes.unicode_minus'] = False 
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
-X = scaler.fit_transform(data.drop(columns=['时间']))
-# plt.figure(figsize=(16,12))
-plt.xlabel("Engine Factor")
-plt.ylabel("Thrust")
-plt.title("Factors vs Thrust")
-for i in range(27) :
-    plt.plot(data["时间"],X[:][i])
-plt.savefig("Factors_vs_Thrust")
-plt.close()
-plt.show()
-print(X)
-
-
 #2.Handle unormal values 
 # constraints = {
 #     "高压压缩机1st-4th stage压比": (1.0, 5.0),          # >1
@@ -97,3 +80,39 @@ print(X)
 # plt.title('关键参数箱线图（异常值检测）')
 # plt.show()
 data.to_csv('cleaned.csv',index=False)
+
+#3.Simple relation analysis
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  
+plt.rcParams['axes.unicode_minus'] = False 
+from sklearn.preprocessing import StandardScaler
+scaler = StandardScaler()
+X = scaler.fit_transform(data.drop(columns=['时间']))
+fig=plt.figure(figsize=(16,12))
+plt.xlabel("Time")
+plt.ylabel("Engine Factor")
+plt.title("Factors vs Time")
+ax1=fig.add_subplot(211)
+ax1.plot(data["时间"],X[:,-4],label=data.columns[-4])
+ax1.plot(data["时间"],X[:,-5],label=data.columns[-5])
+ax1.legend()
+ax2=fig.add_subplot(212)
+for i in range(22) :
+    ax2.plot(data["时间"],X[:,i],label=data.columns[i+1])
+ax2.plot(data["时间"],X[:,-1],label=data.columns[-1])
+ax2.plot(data["时间"],X[:,-2],label=data.columns[-2])
+ax2.plot(data["时间"],X[:,-3],label=data.columns[-3])
+ax2.legend()
+plt.savefig("Factors_vs_Time")
+plt.close()
+plt.show()
+#Set Chinese character for plotting
+plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  
+plt.rcParams['axes.unicode_minus'] = False 
+#1.Linear analysis (Pearson)
+plt.figure(figsize=(16, 12))
+corr_matrix = data.corr()
+sns.heatmap(corr_matrix[['推力/kN']].sort_values('推力/kN', ascending=False), 
+            annot=True, cmap='coolwarm')
+plt.title("Pearson factors of thrust with virables")
+plt.savefig("Pearson_Factors.png")
+plt.close()

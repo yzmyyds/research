@@ -2,20 +2,6 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 data=pd.read_csv('cleaned.csv',header=0)
-#############################################################################################
-#Correlation analysis
-#############################################################################################
-#Set Chinese character for plotting
-plt.rcParams['font.sans-serif'] = ['Microsoft YaHei']  
-plt.rcParams['axes.unicode_minus'] = False 
-#1.Linear analysis (Pearson)
-plt.figure(figsize=(16, 12))
-corr_matrix = data.corr()
-sns.heatmap(corr_matrix[['推力/kN']].sort_values('推力/kN', ascending=False), 
-            annot=True, cmap='coolwarm')
-plt.title("Pearson factors of thrust with virables")
-plt.savefig("Pearson_Factors.png")
-plt.close()
 
 #############################################################################################
 #Model construction
