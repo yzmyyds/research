@@ -1,0 +1,88 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{unity-firsthand}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=80ceab7f5bea77794be72a470d8e010a}{%
+           family={Samples},
+           familyi={S\bibinitperiod},
+           given={Oculus},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{fullhash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{fullhashraw}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{bibnamehash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{authorbibnamehash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{authornamehash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{authorfullhash}{80ceab7f5bea77794be72a470d8e010a}
+      \strng{authorfullhashraw}{80ceab7f5bea77794be72a470d8e010a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Unity-FirstHand}
+      \field{urlday}{12}
+      \field{urlmonth}{4}
+      \field{urlyear}{2025}
+      \field{year}{2025}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://github.com/oculus-samples/Unity-FirstHand
+      \endverb
+      \verb{url}
+      \verb https://github.com/oculus-samples/Unity-FirstHand
+      \endverb
+    \endentry
+    \entry{ur3-manual}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1a04c8d94dde0c0103fd0791548ef73d}{%
+           family={Robots},
+           familyi={R\bibinitperiod},
+           given={Universal},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{fullhash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{fullhashraw}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{bibnamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorbibnamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authornamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorfullhash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorfullhashraw}{1a04c8d94dde0c0103fd0791548ef73d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-10}
+      \field{title}{UR3/CB3 Original Instructions Manual}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.manualslib.com/manual/2019611/Universal-Robots-Ur3-Cb3.html?page=104
+      \endverb
+      \verb{url}
+      \verb https://www.manualslib.com/manual/2019611/Universal-Robots-Ur3-Cb3.html?page=104
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
