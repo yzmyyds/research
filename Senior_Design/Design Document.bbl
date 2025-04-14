@@ -19,6 +19,34 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global/global}
+    \entry{ARXroboticsX2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3704df95860825082e3dae06abcba1cc}{%
+           family={{ARXroboticsX}},
+           familyi={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3704df95860825082e3dae06abcba1cc}
+      \strng{fullhash}{3704df95860825082e3dae06abcba1cc}
+      \strng{fullhashraw}{3704df95860825082e3dae06abcba1cc}
+      \strng{bibnamehash}{3704df95860825082e3dae06abcba1cc}
+      \strng{authorbibnamehash}{3704df95860825082e3dae06abcba1cc}
+      \strng{authornamehash}{3704df95860825082e3dae06abcba1cc}
+      \strng{authorfullhash}{3704df95860825082e3dae06abcba1cc}
+      \strng{authorfullhashraw}{3704df95860825082e3dae06abcba1cc}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-14}
+      \field{title}{ARX VR SDK}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/ARXroboticsX/ARX_VR_SDK/blob/main/%E8%AE%A4%E8%AF%86VR.md
+      \endverb
+      \verb{url}
+      \verb https://github.com/ARXroboticsX/ARX_VR_SDK/blob/main/%E8%AE%A4%E8%AF%86VR.md
+      \endverb
+    \endentry
     \entry{unity-firsthand}{online}{}{}
       \name{author}{1}{}{%
         {{hash=80ceab7f5bea77794be72a470d8e010a}{%
@@ -35,8 +63,8 @@
       \strng{authornamehash}{80ceab7f5bea77794be72a470d8e010a}
       \strng{authorfullhash}{80ceab7f5bea77794be72a470d8e010a}
       \strng{authorfullhashraw}{80ceab7f5bea77794be72a470d8e010a}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Unity-FirstHand}
@@ -50,6 +78,75 @@
       \endverb
       \verb{url}
       \verb https://github.com/oculus-samples/Unity-FirstHand
+      \endverb
+    \endentry
+    \entry{Gichane2024}{article}{}{}
+      \name{author}{4}{}{%
+        {{hash=bd4dfcf9fc3dd066ea9211a95a1a5742}{%
+           family={Gichane},
+           familyi={G\bibinitperiod},
+           given={M.\bibnamedelimi M.},
+           giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=d0cc085ee86ea05e9ae3a078e2ac2d2a}{%
+           family={Byiringiro},
+           familyi={B\bibinitperiod},
+           given={J.\bibnamedelimi B.},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod}}}%
+        {{hash=313b2250200c0359dca9a09032edcb52}{%
+           family={Benoussaad},
+           familyi={B\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+        {{hash=d3fc3d5f6a55de842742432f9a4bb645}{%
+           family={Rakotondrabe},
+           familyi={R\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{5ac596b9bcd27eab251f02d3f4124b2b}
+      \strng{fullhash}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \strng{fullhashraw}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \strng{bibnamehash}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \strng{authorbibnamehash}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \strng{authornamehash}{5ac596b9bcd27eab251f02d3f4124b2b}
+      \strng{authorfullhash}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \strng{authorfullhashraw}{d47b039dbc71d5457c4d6fb03e1676bc}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{International Journal of Precision Engineering and Manufacturing}
+      \field{title}{Human-Centric Framework for Robotic Assembly for Industry of the Future}
+      \field{year}{2024}
+      \field{pages}{1\bibrangedash 19}
+      \range{pages}{19}
+    \endentry
+    \entry{MirCore2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=2031d166d14ac98cb9bcd324a03d49de}{%
+           family={MirCore},
+           familyi={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{fullhash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{fullhashraw}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{bibnamehash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{authorbibnamehash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{authornamehash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{authorfullhash}{2031d166d14ac98cb9bcd324a03d49de}
+      \strng{authorfullhashraw}{2031d166d14ac98cb9bcd324a03d49de}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-14}
+      \field{title}{Unity-Object-Detection-and-Localization-with-VR}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://github.com/MirCore/Unity-Object-Detection-and-Localization-with-VR
+      \endverb
+      \verb{url}
+      \verb https://github.com/MirCore/Unity-Object-Detection-and-Localization-with-VR
       \endverb
     \endentry
     \entry{ur3-manual}{online}{}{}
@@ -68,8 +165,8 @@
       \strng{authornamehash}{1a04c8d94dde0c0103fd0791548ef73d}
       \strng{authorfullhash}{1a04c8d94dde0c0103fd0791548ef73d}
       \strng{authorfullhashraw}{1a04c8d94dde0c0103fd0791548ef73d}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{note}{2025-04-10}
@@ -80,6 +177,64 @@
       \endverb
       \verb{url}
       \verb https://www.manualslib.com/manual/2019611/Universal-Robots-Ur3-Cb3.html?page=104
+      \endverb
+    \endentry
+    \entry{Jain2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=cca40f5feee47612fde3401ff9243dd0}{%
+           family={Jain},
+           familyi={J\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{fullhash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{fullhashraw}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{bibnamehash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{authorbibnamehash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{authornamehash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{authorfullhash}{cca40f5feee47612fde3401ff9243dd0}
+      \strng{authorfullhashraw}{cca40f5feee47612fde3401ff9243dd0}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{10}
+      \field{note}{2025-04-14}
+      \field{title}{Mechanical Gripper}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://grabcad.com/library/mechanical-gripper-14
+      \endverb
+      \verb{url}
+      \verb https://grabcad.com/library/mechanical-gripper-14
+      \endverb
+    \endentry
+    \entry{IEEE}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=472abfae8142fdb6f39d081303e8af85}{%
+           family={{IEEE}},
+           familyi={I\bibinitperiod}}}%
+      }
+      \strng{namehash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{fullhash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{fullhashraw}{472abfae8142fdb6f39d081303e8af85}
+      \strng{bibnamehash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{authorbibnamehash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{authornamehash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{authorfullhash}{472abfae8142fdb6f39d081303e8af85}
+      \strng{authorfullhashraw}{472abfae8142fdb6f39d081303e8af85}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-14}
+      \field{title}{IEEE Code of Ethics}
+      \verb{urlraw}
+      \verb https://www.ieee.org/about/index.html
+      \endverb
+      \verb{url}
+      \verb https://www.ieee.org/about/index.html
       \endverb
     \endentry
   \enddatalist

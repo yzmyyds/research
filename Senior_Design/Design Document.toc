@@ -1,23 +1,26 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Sample equations}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Sample listings}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.1}Problem and Solution}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Visual Aid}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}High-level Requirements}{2}{section.1.3}%
 \contentsline {chapter}{\numberline {2}Design}{3}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Block Diagram}{3}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Physical Design}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}Subsystem Introduction}{5}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Digital Twins Subsystem}{5}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}VR Subsystem}{7}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Mechanical Arm Subsystem}{10}{subsection.2.3.3}%
-\contentsline {section}{\numberline {2.4}Tolerance Analysis}{12}{section.2.4}%
-\contentsline {subsection}{\numberline {2.4.1}Power Supply}{12}{subsection.2.4.1}%
-\contentsline {subsubsection}{UR3 Robotic Arm}{12}{subsubsection*.4}%
-\contentsline {subsubsection}{STM32 Chip}{12}{subsubsection*.5}%
-\contentsline {subsection}{\numberline {2.4.2}UR3 Precision}{12}{subsection.2.4.2}%
-\contentsline {subsection}{\numberline {2.4.3}Mechanical Claw}{13}{subsection.2.4.3}%
-\contentsline {subsection}{\numberline {2.4.4}Torch of Grasping}{13}{subsection.2.4.4}%
-\contentsline {chapter}{\numberline {3}Cost \& Schedule}{15}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Cost Analysis}{15}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Schedule}{15}{section.3.2}%
-\contentsline {chapter}{\numberline {4}Ethics \& Safety}{16}{chapter.4}%
-\contentsline {chapter}{References}{17}{chapter*.8}%
+\contentsline {section}{\numberline {2.3}Subsystem Introduction}{4}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Digital Twins Subsystem}{4}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}VR Subsystem}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Mechanical Arm Subsystem}{8}{subsection.2.3.3}%
+\contentsline {section}{\numberline {2.4}Tolerance Analysis}{9}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Power Supply}{9}{subsection.2.4.1}%
+\contentsline {subsubsection}{UR3 Robotic Arm}{9}{subsubsection*.8}%
+\contentsline {subsubsection}{STM32 Chip}{10}{subsubsection*.9}%
+\contentsline {subsection}{\numberline {2.4.2}UR3 Precision}{10}{subsection.2.4.2}%
+\contentsline {subsection}{\numberline {2.4.3}Mechanical Claw}{10}{subsection.2.4.3}%
+\contentsline {subsection}{\numberline {2.4.4}Torch of Grasping}{11}{subsection.2.4.4}%
+\contentsline {chapter}{\numberline {3}Cost \& Schedule}{12}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Cost Analysis}{12}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Schedule}{12}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Ethics \& Safety}{14}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Ethics}{14}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Safety}{15}{section.4.2}%
+\contentsline {chapter}{References}{16}{chapter*.12}%
 \contentsfinish 

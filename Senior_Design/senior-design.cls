@@ -26,7 +26,9 @@
 \RequirePackage{multirow}
 \RequirePackage{indentfirst}
 \RequirePackage{fancyhdr}
+\RequirePackage{fontspec}
 \RequirePackage{graphicx}
+\RequirePackage{longtable}
 \RequirePackage[format=hang,font={small},labelfont={bf},labelsep={quad}]{caption}
 \RequirePackage{amsmath, amssymb, amsfonts}  % for math spacing
 \RequirePackage[margin=1in]{geometry} % page layout 1' margin
