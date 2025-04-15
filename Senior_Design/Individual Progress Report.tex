@@ -1,0 +1,114 @@
+%% Individual Progress Report.tex
+%% ZJUI Senior Design Individual Report
+
+\documentclass{senior-design-individual}
+
+%%% Report information %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%TODO: Fill project info here
+\semester{Spring 2025}
+\reporttitle{Human-Robot Interaction for Object Grasping with Virtual Reality and Robotic Arms}
+\projectnumber{26}
+\supervisor{Gaoang Wang \& Liangjing Yang}
+\ta{Tielong Cai \& Tianci Tang}
+\reportdate{April 17, 2025}
+
+%TODO: Fill personal info here
+\authorname{Ziming Yan}
+\studentid{zimingy3}
+\grade{2021}
+\major{Electrical Engineering}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addbibresource{references.bib}  % bib database
+\begin{document}
+% Coverpage
+\begin{titlepage}
+    \newgeometry{left=1cm, right=1cm, top=1in, bottom=1in}
+    \begin{center}
+        ~~\\ % to make the vspace effective
+        \vspace{1.5cm}
+        {\fontsize{16}{24}\selectfont Zhejiang University-University of Illinois Urbana-Champaign Institute}\\
+        \vspace{1.88cm}
+        {\fontsize{28}{42}\selectfont Individual Progress Report}\\
+        \vspace{1.6cm}
+        \begin{minipage}{15.92cm}
+            \centering
+            \fontsize{26}{26}\selectfont
+            \MakeUppercase{\bf \RPTTITLE}
+        \end{minipage}\\[2cm]
+        % {\fontsize{14}{21}\selectfont By}\\[1.5em]
+        \begin{table}[h]
+            \centering
+            \fontsize{14}{12}\selectfont
+            \renewcommand{\arraystretch}{1.5}
+            \begin{tabular}{cc}
+                NAME:&Ziming Yan\\
+                UIN:&zimingy3\\
+            \end{tabular}
+        \end{table}
+        \vfill
+        {\fontsize{12}{\baselineskip}\selectfont Individual Report for Senior Design, Spring 2024\\
+            Major: \MAJOR \\
+            % Grade: \GRADE \\
+            Supervisor: \FACULTYNAME \\
+            TA:~ \TANAME\\
+            \vfill}
+        {\fontsize{12}{18}\selectfont\RPTDATE\\
+            Project No. \PROJNBR}
+    \end{center}
+    \vspace{2cm}
+    ~
+    \restoregeometry
+\end{titlepage}
+% \thispagestyle{empty}
+% \frontmatter
+% \includepdf{frontmatter/checklist.pdf}
+% \cleardoublepage
+% \includepdf{frontmatter/statement.pdf}
+% \cleardoublepage
+%%% Acknowledgement %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % TODO: Acknowledgement here
+% \subfile{body/0-acknowledgement.tex}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%% Abstract %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % TODO: Abstract here
+% \subfile{body/0-abstract.tex}
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\mainmatter
+%%% Body %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TODO: Main body starts here
+\chapter{Introduction}
+Provide a state-of-the-art and comprehensive literature review in your introduction. Starting with general information, briefly describe an overview of the context of your research background, defining the key concepts, relevant history, and previous work by others. Then narrow down to the specific literature, industry standards, or textbooks that correlate to your work and spotlight the motivation for the project. Highlight the addressed science or engineering problem, the utilized innovation method, and the purpose and usefulness of the device or system you have built. At Last, Summarize the contents of the upcoming chapters as well as the main conclusions of your project, to be elaborated in the last chapter.
+
+All cited references must be listed individually and direct cites from references should be avoided. Additionally, ensure that your reference is sufficient to support your research and demonstrate how it contributes to your work.
+
+\section{Project Overview}
+It is advisable to set out the general chapter headings in a meaningful way so that reading through them will clearly articulate this narrative.
+\section{Responsibilities and Role}
+\chapter{Individual Design Work}
+\chapter{Conclusion}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand*{\UrlFont}{\rmfamily}
+\printbibliography[title={References},heading=bibintoc]
+\titleformat{\chapter}
+{\fontsize{15pt}{\baselineskip}\selectfont\bfseries}
+{Appendix \thechapter}{1em}{}
+\titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+\begin{appendices}
+    %%% Appendices %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % TODO: Appendices here
+    \chapter{Sample Appendix Chapter}
+    % \chapter{...}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{appendices}
+% \titleformat{\chapter}
+% {\fontsize{15pt}{\baselineskip}\selectfont\bfseries}
+% {\thechapter}{1em}{}
+% \titlespacing{\chapter}{0pt}{0pt}{\baselineskip}
+% \backmatter
+% \includepdf[pages={1}]{backmatter/resume.pdf}
+% \cleardoublepage
+% \includepdf[pages={1}]{backmatter/task_assignment.pdf}
+% \cleardoublepage
+% \includepdf[pages={1}]{backmatter/assessment_form.pdf}
+\end{document}
