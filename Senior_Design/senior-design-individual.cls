@@ -93,12 +93,12 @@
 \setlength{\parindent}{2em}
 \setlength{\headheight}{14pt}
 \renewcommand{\headrulewidth}{0.5pt}
-
+\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{#1}}{}}
 \newcommand\setninept{\fontsize{9pt}{\baselineskip}\selectfont}
 \pagestyle{fancy}\fancyhf{}
 \def\setfancyheadfoot{
-  \fancyhead[LE]{ZJUI Senior Design Project}
-  \fancyhead[RO]{\RPTTITLE}
+  \fancyhead[L]{\MakeUppercase\leftmark}
+  \fancyhead[R]{\MakeUppercase\AUTHORNAME}
   \fancyfoot[C]{\thepage}
 }
 

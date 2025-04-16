@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.11)  16 APR 2025 03:30
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.4.11)  17 APR 2025 04:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1505,9 +1505,9 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 15.0pt on input line 76.
+(Font)              scaled to size 15.0pt on input line 62.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 15.0pt on input line 76.
+(Font)              scaled to size 15.0pt on input line 62.
  (./Individual Progress Report.toc
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
 (Font)              scaled to size 12.0pt on input line 1.
@@ -1530,9 +1530,18 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 ]
 Chapter 1.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 13.0pt on input line 85.
+(Font)              scaled to size 13.0pt on input line 67.
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 13.0pt on input line 85.
+(Font)              scaled to size 13.0pt on input line 67.
+File: Figures/Robot Experiment Setup.png Graphic file (type bmp)
+<Figures/Robot Experiment Setup.png>
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 10.95pt on input line 91.
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 10.95pt on input line 91.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 
 
@@ -1546,8 +1555,6 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 
 
 ]
-Chapter 2.
-
 
 
 Package fancyhdr Warning: \headheight is too small (14.0pt): 
@@ -1556,13 +1563,10 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[2
-
-]
-Chapter 3.
-
-LaTeX Warning: Empty bibliography on input line 92.
-
+[2]
+Chapter 2.
+File: Figures/Block Diagram.png Graphic file (type bmp)
+<Figures/Block Diagram.png>
 
 
 
@@ -1575,7 +1579,10 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 [3
 
 ]
-Appendix A.
+File: Figures/STM32F103.png Graphic file (type bmp)
+<Figures/STM32F103.png>
+File: Figures/Motor Controller.png Graphic file (type bmp)
+<Figures/Motor Controller.png>
 
 
 
@@ -1585,7 +1592,67 @@ Package fancyhdr Warning: \headheight is too small (14.0pt):
 (fancyhdr)                You might also make \topmargin smaller:
 (fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
 
-[4
+[4]
+File: Figures/UR3 Tolerance.png Graphic file (type bmp)
+<Figures/UR3 Tolerance.png>
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[5]
+File: Figures/notebook.png Graphic file (type bmp)
+<Figures/notebook.png>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[6]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[7]
+Chapter 3.
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[8
+
+]
+
+
+Package fancyhdr Warning: \headheight is too small (14.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller:
+(fancyhdr)                \addtolength{\topmargin}{-0.49998pt}.
+
+[9
+
 
 ] (./Individual Progress Report.aux)
  ***********
@@ -1599,12 +1666,12 @@ Package logreq Info: Writing requests to '"Individual Progress Report".run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36507 strings out of 473832
- 749326 string characters out of 5733158
- 1585853 words of memory out of 5000000
- 59071 multiletter control sequences out of 15000+600000
- 586813 words of font info for 125 fonts, out of 8000000 for 9000
+ 36843 strings out of 473832
+ 757938 string characters out of 5733158
+ 1596124 words of memory out of 5000000
+ 59396 multiletter control sequences out of 15000+600000
+ 586837 words of font info for 128 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 81i,11n,126p,1217b,3742s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 81i,11n,126p,1217b,5137s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on Individual Progress Report.pdf (6 pages).
+Output written on Individual Progress Report.pdf (11 pages).

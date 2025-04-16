@@ -16,5 +16,125 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{csdn_daniaoxp_2025}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=491a370b038477d76870140018572022}{%
+           family={DaniaoXP},
+           familyi={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{491a370b038477d76870140018572022}
+      \strng{fullhash}{491a370b038477d76870140018572022}
+      \strng{fullhashraw}{491a370b038477d76870140018572022}
+      \strng{bibnamehash}{491a370b038477d76870140018572022}
+      \strng{authorbibnamehash}{491a370b038477d76870140018572022}
+      \strng{authornamehash}{491a370b038477d76870140018572022}
+      \strng{authorfullhash}{491a370b038477d76870140018572022}
+      \strng{authorfullhashraw}{491a370b038477d76870140018572022}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-03-16}
+      \field{title}{stm32F103入门学习}
+      \field{year}{2025}
+      \verb{urlraw}
+      \verb https://blog.csdn.net/daniaoxp/article/details/100101149
+      \endverb
+      \verb{url}
+      \verb https://blog.csdn.net/daniaoxp/article/details/100101149
+      \endverb
+    \endentry
+    \entry{ur3-manual}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=1a04c8d94dde0c0103fd0791548ef73d}{%
+           family={Robots},
+           familyi={R\bibinitperiod},
+           given={Universal},
+           giveni={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{fullhash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{fullhashraw}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{bibnamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorbibnamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authornamehash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorfullhash}{1a04c8d94dde0c0103fd0791548ef73d}
+      \strng{authorfullhashraw}{1a04c8d94dde0c0103fd0791548ef73d}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-10}
+      \field{title}{UR3/CB3 Original Instructions Manual}
+      \field{year}{2015}
+      \verb{urlraw}
+      \verb https://www.manualslib.com/manual/2019611/Universal-Robots-Ur3-Cb3.html?page=104
+      \endverb
+      \verb{url}
+      \verb https://www.manualslib.com/manual/2019611/Universal-Robots-Ur3-Cb3.html?page=104
+      \endverb
+    \endentry
+    \entry{unity_camera_reference_2024}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3f56ad8f8e05fcad24de3fcf878fb50b}{%
+           family={{Unity Technologies}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{fullhash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{fullhashraw}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{bibnamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorbibnamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authornamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorfullhash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorfullhashraw}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \field{extraname}{1}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{2025-04-01}
+      \field{title}{Camera Component Reference}
+      \field{year}{2024}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/camera-component-reference.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/cn/Packages/com.unity.render-pipelines.universal@12.1/manual/camera-component-reference.html
+      \endverb
+    \endentry
+    \entry{unity_mesh_renderer_6000}{online}{}{}
+      \name{author}{1}{}{%
+        {{hash=3f56ad8f8e05fcad24de3fcf878fb50b}{%
+           family={{Unity Technologies}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{fullhash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{fullhashraw}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{bibnamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorbibnamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authornamehash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorfullhash}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \strng{authorfullhashraw}{3f56ad8f8e05fcad24de3fcf878fb50b}
+      \field{extraname}{2}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{note}{Accessed: 2025-04-01}
+      \field{title}{Mesh Renderer}
+      \verb{urlraw}
+      \verb https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshRenderer.html
+      \endverb
+      \verb{url}
+      \verb https://docs.unity3d.com/6000.0/Documentation/ScriptReference/MeshRenderer.html
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
