@@ -65,26 +65,36 @@
 % TODO: Main body starts here
 \chapter{Introduction}
 \section{Project Overview}
-Current robotic systems lack intuitive and seamless human-robot interaction for
-object manipulation. Traditional teleoperation methods often require complex con-
-trollers, making it difficult for users to interact naturally. With advancements in Virtual
-Reality (VR) and robotic systems, it is possible to develop an intuitive interface where
-users can manipulate objects in a virtual space, and a robotic arm replicates these ac-
-tions in real-time. This project aims to bridge the gap between human intention and
-robotic execution by integrating VR with robotic grasping, enabling precise and effi-
-cient remote object manipulation. Such design opens up to a wide potential market
-catering to various customer needs, such as remote working with precise control of
-streamline, dining requests of the Parkinson's, etc.
+Current robotic systems often struggle with providing an intuitive and seamless 
+human-robot interaction, especially for tasks like object manipulation. 
+Traditional teleoperation methods frequently rely on complex controllers, 
+making natural interaction challenging for users. However, with recent 
+advancements in Virtual Reality (VR) and robotics, there's an opportunity to 
+develop an intuitive interface that allows users to manipulate objects in a 
+virtual environment, with a robotic arm replicating these actions in real-time. 
+This project aims to bridge the gap between human intent and robotic execution 
+by integrating VR with robotic grasping systems, enabling precise and efficient 
+remote object manipulation. This approach opens up new possibilities across 
+various sectors, such as remote work with precise control, and assisting people 
+with conditions like Parkinson’s disease in performing daily tasks.
  
 To be specific, our solution addresses the problem by the following workflow:
-First, we create a digital twin of the target objects alongside the robotic arm in Unity
-environment. Then we connect it with the Meta Quest VR App and render the scene,
-which is updated in real-time. During runtime, the Quest reads in the user's hand
-trajectory so that it will be able to recognize which target object to grasp. It constantly
-returns this information together with the hand trajectory to the control module on
-PC. The control module calculates a set of recalibrated waypoints and sends to ROS,
-which orders the robotic arm to approach the object in a way that simulates the user’
-s grasping trajectory.
+
+\begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{>{\raggedright\arraybackslash}p{1.5cm}p{12cm}}
+        \textbf{Step 1:} & First, we create a digital twin of the target objects alongside the robotic arm in the Unity environment. \\
+        \textbf{Step 2:} & Then, we connect this digital twin with the Meta Quest VR App and render the scene, which is updated in real-time. \\
+        \textbf{Step 3:} & During runtime, the Quest reads in the user's hand trajectory, enabling it to recognize which target object to grasp. \\
+
+        \textbf{Step 4:} & The Quest continuously returns this information, along with the hand trajectory, to the control module on the PC. \\
+
+        \textbf{Step 5:} & The control module calculates a set of recalibrated waypoints and sends them to the Robot Operating System (ROS). \\
+
+        \textbf{Step 6:} & ROS then orders the robotic arm to approach the object in a manner that simulates the user's grasping trajectory. \\
+    \end{tabular}
+\end{table}
 \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\linewidth]{Robot Experiment Setup.png}
