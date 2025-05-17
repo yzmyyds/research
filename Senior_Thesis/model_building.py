@@ -33,6 +33,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.4, 
 
 #3_1.Random forest
 from sklearn.ensemble import RandomForestRegressor
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 model_RF = RandomForestRegressor(n_estimators=100, random_state=42)
 model_RF.fit(X_train, y_train)
 #3_1_1.Prediction
@@ -56,13 +57,20 @@ plt.ylabel("Predict Thrust/kN")
 plt.savefig("Performance_assess_of_RF.png")
 plt.close()
 
-# #3_1_3.Cross-validation
+# 检查是否过拟合
+print("\n=== Overfitting Check ===")
+print(f"Random Forest - Train R2: {score_train:.4f}, Test R2: {score_test:.4f}")
+if score_train - score_test > 0.1:
+    print("Warning: Possible overfitting detected in Random Forest.")
+
+# 3_1_3.Cross-validation
 sub_feats = ['喷嘴喉道静压', '低压涡轮出口压力', '喷嘴喉道速度', '喷嘴喉道静温', '推力燃料比']
 sub_corr = data[sub_feats].corr().abs()
 print(sub_corr)
 sns.clustermap(sub_corr, annot=True, cmap='coolwarm')
 plt.savefig("sub_corr.png")
 plt.close()
+
 
 chosen = ['喷嘴喉道静压', '推力燃料比']
 X_sub = data[chosen].values
@@ -112,6 +120,28 @@ scores_rfe = cross_val_score(rf, X_rfe, y, groups=groups, cv=gkf, scoring='r2')
 print("Using RFE-selected features:")
 print("GroupKFold R2 scores:", scores_rfe)
 print("Mean R2:", scores_rfe.mean(), "Std:", scores_rfe.std())
+
+# 尝试用其他变量训练模型，避免高相关性变量 (Only '推力燃料比' left)
+other_feats = [col for col in data.columns if col not in ['时间', '推力/kN', '喷嘴喉道静压', '低压涡轮出口压力', '喷嘴喉道速度', '喷嘴喉道静温', 'RunID']]
+if other_feats:
+    X_other = data[other_feats].values
+    y_other = data['推力/kN'].values
+    groups_other = data['RunID'].values
+
+    # 标准化
+    scaler_other = StandardScaler()
+    X_other_scaled = scaler_other.fit_transform(X_other)
+
+    # 分组交叉验证
+    rf_other = RandomForestRegressor(n_estimators=100, random_state=42)
+    gkf_other = GroupKFold(n_splits=5)
+    scores_other = cross_val_score(rf_other, X_other_scaled, y_other, groups=groups_other, cv=gkf_other, scoring='r2')
+
+    print("Using other variables (excluding highly correlated ones):")
+    print("GroupKFold R2 scores:", scores_other)
+    print("Mean R2:", scores_other.mean(), "Std:", scores_other.std())
+else:
+    print("No other variables available for training after excluding highly correlated ones.")
 # #3_2.Decision Tree
 # from sklearn.tree import DecisionTreeRegressor, plot_tree
 # model_DT=DecisionTreeRegressor(random_state=42)
@@ -152,14 +182,74 @@ print("Mean R2:", scores_rfe.mean(), "Std:", scores_rfe.std())
 # plt.show()
 
 #3_4. Linear Regression 
-from sklearn.linear_model import LinearRegression
-model_LR=LinearRegression()
-model_LR.fit(X_train,y_train)
-y_pred=model_LR.predict(X_test)
-mse=mean_squared_error(y_test,y_pred)
-score_test=model_LR.score(X_test,y_test)
-score_train=model_LR.score(X_train,y_train)
-print("\nLinear Regression:")
+# from sklearn.linear_model import LinearRegression
+# model_LR=LinearRegression()
+# model_LR.fit(X_train,y_train)
+# y_pred=model_LR.predict(X_test)
+# mse=mean_squared_error(y_test,y_pred)
+# score_test=model_LR.score(X_test,y_test)
+# score_train=model_LR.score(X_train,y_train)
+# print("\nLinear Regression:")
+# print(f"MSE: {mse}")
+# print(f"Accuracy of test dataset: {score_test}")
+# print(f"Accuracy of train dataset: {score_train}")
+
+# 3_5. Neural Network (MLPRegressor)
+from sklearn.neural_network import MLPRegressor
+from sklearn.decomposition import PCA
+# 使用标准化后的特征
+model_MLP = MLPRegressor(hidden_layer_sizes=(100, 50), activation='relu', solver='adam', max_iter=1000, random_state=42)
+model_MLP.fit(X_train, y_train)
+y_pred = model_MLP.predict(X_test)
+
+mse = mean_squared_error(y_test, y_pred)
+score_test = model_MLP.score(X_test, y_test)
+score_train = model_MLP.score(X_train, y_train)
+r2 = r2_score(y_test, y_pred)
+
+print("Neural Network (MLPRegressor):")
 print(f"MSE: {mse}")
 print(f"Accuracy of test dataset: {score_test}")
 print(f"Accuracy of train dataset: {score_train}")
+print(f"R2 score: {r2}")
+
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred, color='green', alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
+plt.title("Actual vs Predict (Neural Network)")
+plt.xlabel("Actual Thrust/kN")
+plt.ylabel("Predict Thrust/kN")
+plt.savefig("Performance_assess_of_NN.png")
+plt.close()
+
+# 使用PCA降维优化神经网络
+
+# 选择主成分数目（如2或根据累计方差解释率选择）
+pca = PCA(n_components=2)
+X_train_pca = pca.fit_transform(X_train)
+X_test_pca = pca.transform(X_test)
+
+model_MLP_pca = MLPRegressor(hidden_layer_sizes=(100, 50), activation='relu', solver='adam', max_iter=1000, random_state=42)
+model_MLP_pca.fit(X_train_pca, y_train)
+y_pred_pca = model_MLP_pca.predict(X_test_pca)
+
+mse_pca = mean_squared_error(y_test, y_pred_pca)
+score_test_pca = model_MLP_pca.score(X_test_pca, y_test)
+score_train_pca = model_MLP_pca.score(X_train_pca, y_train)
+r2_pca = r2_score(y_test, y_pred_pca)
+
+print("Neural Network (MLPRegressor) with PCA:")
+print(f"MSE: {mse_pca}")
+print(f"Accuracy of test dataset: {score_test_pca}")
+print(f"Accuracy of train dataset: {score_train_pca}")
+print(f"R2 score: {r2_pca}")
+
+plt.figure(figsize=(10, 6))
+plt.scatter(y_test, y_pred_pca, color='purple', alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='red', linestyle='--')
+plt.title("Actual vs Predict (Neural Network + PCA)")
+plt.xlabel("Actual Thrust/kN")
+plt.ylabel("Predict Thrust/kN")
+plt.savefig("Performance_assess_of_NN_PCA.png")
+plt.close()
+
