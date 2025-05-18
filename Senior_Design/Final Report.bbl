@@ -1,0 +1,93 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{stm32f407zg}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=c38884ab3cf908c2798725960369391b}{%
+           family={{STMicroelectronics}},
+           familyi={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{c38884ab3cf908c2798725960369391b}
+      \strng{fullhash}{c38884ab3cf908c2798725960369391b}
+      \strng{fullhashraw}{c38884ab3cf908c2798725960369391b}
+      \strng{bibnamehash}{c38884ab3cf908c2798725960369391b}
+      \strng{authorbibnamehash}{c38884ab3cf908c2798725960369391b}
+      \strng{authornamehash}{c38884ab3cf908c2798725960369391b}
+      \strng{authorfullhash}{c38884ab3cf908c2798725960369391b}
+      \strng{authorfullhashraw}{c38884ab3cf908c2798725960369391b}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://www.st.com/en/microcontrollers-microprocessors/stm32f407zg.html}}
+      \field{note}{Accessed: 2025-05-17}
+      \field{title}{{STM32F407ZG - High-performance foundation line, Arm Cortex-M4 core with DSP and FPU, 1 Mbyte of Flash memory, 168 MHz CPU, ART Accelerator, Ethernet, FSMC}}
+    \endentry
+    \entry{zhang2023csdn}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f3adb3bbfbf6844a7593c7f8a604021f}{%
+           family={张大头},
+           familyi={张\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{fullhash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{fullhashraw}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{bibnamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorbibnamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authornamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorfullhash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorfullhashraw}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://blog.csdn.net/zhangdatou666/article/details/132644047}}
+      \field{note}{Accessed: 2025-05-18}
+      \field{title}{步进闭环驱动说明书Rev1.3}
+      \field{year}{2023}
+    \endentry
+    \entry{liu2024csdn}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=729b11c7f17ff977197417f65af25379}{%
+           family={艾格北峰},
+           familyi={艾\bibinitperiod}}}%
+      }
+      \strng{namehash}{729b11c7f17ff977197417f65af25379}
+      \strng{fullhash}{729b11c7f17ff977197417f65af25379}
+      \strng{fullhashraw}{729b11c7f17ff977197417f65af25379}
+      \strng{bibnamehash}{729b11c7f17ff977197417f65af25379}
+      \strng{authorbibnamehash}{729b11c7f17ff977197417f65af25379}
+      \strng{authornamehash}{729b11c7f17ff977197417f65af25379}
+      \strng{authorfullhash}{729b11c7f17ff977197417f65af25379}
+      \strng{authorfullhashraw}{729b11c7f17ff977197417f65af25379}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://blog.csdn.net/qq_35057766/article/details/135580884}}
+      \field{note}{Accessed: 2025-05-18}
+      \field{title}{CAN总线协议}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

@@ -1,0 +1,48 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global/global}
+    \entry{zhang2023csdn}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=f3adb3bbfbf6844a7593c7f8a604021f}{%
+           family={张大头},
+           familyi={张\bibinitperiod}}}%
+      }
+      \strng{namehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{fullhash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{fullhashraw}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{bibnamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorbibnamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authornamehash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorfullhash}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \strng{authorfullhashraw}{f3adb3bbfbf6844a7593c7f8a604021f}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://blog.csdn.net/zhangdatou666/article/details/132644047}}
+      \field{note}{Accessed: 2025-05-18}
+      \field{title}{步进闭环驱动说明书Rev1.3}
+      \field{year}{2023}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
