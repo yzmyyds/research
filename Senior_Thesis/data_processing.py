@@ -15,10 +15,10 @@ factor_names = data_std.columns[1:-1]  # Exclude first and last columns if neede
 
 # Plot each factor vs thrust in a separate subplot (2x3 grid as example)
 num_factors = len(factor_names)
-cols = 3
+cols = 7
 rows = (num_factors + cols - 1) // cols
 
-fig, axes = plt.subplots(rows, cols, figsize=(6*cols, 4*rows))
+fig, axes = plt.subplots(rows, cols, figsize=(6*cols, 5*rows))
 axes = axes.flatten()
 
 for i, name in enumerate(factor_names):
@@ -36,7 +36,7 @@ plt.savefig("Figures/Factors_vs_Thrust_Subplots.png")
 plt.close()
 # Plot each factor and thrust vs index in a separate subplot (2x3 grid as example)
 
-fig, axes = plt.subplots(rows, cols, figsize=(6*cols, 4*rows))
+fig, axes = plt.subplots(rows, cols, figsize=(5*cols, 5*rows))
 axes = axes.flatten()
 
 for i, name in enumerate(factor_names):

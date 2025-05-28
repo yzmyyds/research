@@ -62,7 +62,7 @@ param_cols = [col for col in data2.columns if col not in exclude_cols]
 # 检测异常值
 abnormal_dict = {}
 for col in param_cols:
-    outliers = detect_outliers_zscore(data2, col)
+    outliers = detect_outliers_zscore(data2, col, threshold=3.5)  
     abnormal_dict[col] = outliers
     print(f"{col} 的Z-score异常值数: {len(outliers)}")
 
