@@ -404,157 +404,157 @@ print(f"Stacking Regressor mean R²: {cv_scores_stack.mean():.5f}")
 # 定义SVR参数网格，支持多种kernel
 # 降低计算量：缩小参数网格、减少交叉验证折数
 # 更小的参数空间，减少计算量
-# svr_param_dist = {
-#     'kernel': ['rbf', 'linear'],
-#     'C': [0.1, 1, 10, 50],
-#     'gamma': ['scale', 0.01, 0.1, 1]
-# }
+svr_param_dist = {
+    'kernel': ['rbf', 'linear'],
+    'C': [0.1, 1, 10, 50],
+    'gamma': ['scale', 0.01, 0.1, 1]
+}
 
-# svr = SVR()
-# gkf = GroupKFold(n_splits=4)  # 4折交叉验证
+svr = SVR()
+gkf = GroupKFold(n_splits=4)  # 4折交叉验证
 
-# # 使用tqdm显示RandomizedSearchCV进度
+# 使用tqdm显示RandomizedSearchCV进度
 
-# class TqdmRandomizedSearchCV(RandomizedSearchCV):
-#     def fit(self, X, y=None, **fit_params):
-#         n_iter = self.n_iter
-#         with tqdm(total=n_iter, desc="RandomizedSearchCV Progress") as pbar:
-#             self._pbar = pbar
-#             return super().fit(X, y, **fit_params)
-#     def _run_search(self, evaluate_candidates):
-#         def wrapper(candidate_params):
-#             self._pbar.update(len(candidate_params))
-#             return evaluate_candidates(candidate_params)
-#         super()._run_search(wrapper)
+class TqdmRandomizedSearchCV(RandomizedSearchCV):
+    def fit(self, X, y=None, **fit_params):
+        n_iter = self.n_iter
+        with tqdm(total=n_iter, desc="RandomizedSearchCV Progress") as pbar:
+            self._pbar = pbar
+            return super().fit(X, y, **fit_params)
+    def _run_search(self, evaluate_candidates):
+        def wrapper(candidate_params):
+            self._pbar.update(len(candidate_params))
+            return evaluate_candidates(candidate_params)
+        super()._run_search(wrapper)
 
-# random_search = TqdmRandomizedSearchCV(
-#     svr, svr_param_dist, n_iter=12, cv=gkf, scoring='r2', n_jobs=1, verbose=2, random_state=42
-# )
-# random_search.fit(X_sub_pca, y, groups=groups)
+random_search = TqdmRandomizedSearchCV(
+    svr, svr_param_dist, n_iter=12, cv=gkf, scoring='r2', n_jobs=1, verbose=2, random_state=42
+)
+random_search.fit(X_sub_pca, y, groups=groups)
 
-# print("\nSVR最佳参数：", random_search.best_params_)
-# print("SVR最佳交叉验证R²得分：", random_search.best_score_)
+print("\nSVR最佳参数：", random_search.best_params_)
+print("SVR最佳交叉验证R²得分：", random_search.best_score_)
 
-# # 用最佳参数在训练/测试集上评估
-# best_svr = random_search.best_estimator_
-# best_svr.fit(X_train, y_train)
-# y_pred_svr = best_svr.predict(X_test)
-# mse_svr = mean_squared_error(y_test, y_pred_svr)
-# r2_svr = r2_score(y_test, y_pred_svr)
-# print(f"SVR优化后测试集MSE: {mse_svr}")
-# print(f"SVR优化后测试集R2: {r2_svr}")
+# 用最佳参数在训练/测试集上评估
+best_svr = random_search.best_estimator_
+best_svr.fit(X_train, y_train)
+y_pred_svr = best_svr.predict(X_test)
+mse_svr = mean_squared_error(y_test, y_pred_svr)
+r2_svr = r2_score(y_test, y_pred_svr)
+print(f"SVR优化后测试集MSE: {mse_svr}")
+print(f"SVR优化后测试集R2: {r2_svr}")
 
-# # 可视化   
-# plt.figure(figsize=(6, 6))
-# plt.scatter(y_test, y_pred_svr, color='dodgerblue', alpha=0.5)
-# plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
-# plt.title(f"SVR (Tuned, RandomizedSearchCV)\nR²={r2_svr:.5f}")
-# plt.xlabel("Actual Thrust/kN")
-# plt.ylabel("Predicted Thrust/kN")
-# plt.tight_layout()
-# plt.savefig("Figures/SVR_Tuned_Randomized_Performance_with_PCA.png")
-# plt.close()
+# 可视化   
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_pred_svr, color='dodgerblue', alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
+plt.title(f"SVR (Tuned, RandomizedSearchCV)\nR²={r2_svr:.5f}")
+plt.xlabel("Actual Thrust/kN")
+plt.ylabel("Predicted Thrust/kN")
+plt.tight_layout()
+plt.savefig("Figures/SVR_Tuned_Randomized_Performance_with_PCA.png")
+plt.close()
 
 
-# # XGBoost参数调优（使用RandomizedSearchCV降低计算量，带进度条）
-# # 减小数据量：仅用部分样本进行参数搜索，加快调优速度
-# sample_frac = 0.1  # 只用10%的数据
-# np.random.seed(42)
-# sample_idx = np.random.choice(len(X_sub_pca), int(len(X_sub_pca) * sample_frac), replace=False)
-# X_sub_pca_sample = X_sub_pca[sample_idx]
-# y_sample = y[sample_idx]
-# groups_sample = groups[sample_idx]
+# XGBoost参数调优（使用RandomizedSearchCV降低计算量，带进度条）
+# 减小数据量：仅用部分样本进行参数搜索，加快调优速度
+sample_frac = 0.1  # 只用10%的数据
+np.random.seed(42)
+sample_idx = np.random.choice(len(X_sub_pca), int(len(X_sub_pca) * sample_frac), replace=False)
+X_sub_pca_sample = X_sub_pca[sample_idx]
+y_sample = y[sample_idx]
+groups_sample = groups[sample_idx]
 
-# class TqdmRandomizedSearchCV(RandomizedSearchCV):
-#     def fit(self, X, y=None, **fit_params):
-#         n_iter = self.n_iter
-#         with tqdm(total=n_iter, desc="RandomizedSearchCV Progress (XGBoost)") as pbar:
-#             self._pbar = pbar
-#             return super().fit(X, y, **fit_params)
-#     def _run_search(self, evaluate_candidates):
-#         def wrapper(candidate_params):
-#             self._pbar.update(len(candidate_params))
-#             return evaluate_candidates(candidate_params)
-#         super()._run_search(wrapper)
+class TqdmRandomizedSearchCV(RandomizedSearchCV):
+    def fit(self, X, y=None, **fit_params):
+        n_iter = self.n_iter
+        with tqdm(total=n_iter, desc="RandomizedSearchCV Progress (XGBoost)") as pbar:
+            self._pbar = pbar
+            return super().fit(X, y, **fit_params)
+    def _run_search(self, evaluate_candidates):
+        def wrapper(candidate_params):
+            self._pbar.update(len(candidate_params))
+            return evaluate_candidates(candidate_params)
+        super()._run_search(wrapper)
 
-# xgb_param_dist = {
-#     'n_estimators': [50, 100, 150],
-#     'max_depth': [3, 4, 5],
-#     'learning_rate': [0.01, 0.05, 0.1],
-#     'subsample': [0.8, 1.0],
-#     'colsample_bytree': [0.8, 1.0],
-#     'gamma': [0, 0.1],
-#     'reg_alpha': [0, 0.01],
-#     'reg_lambda': [1, 1.5]
-# }
+xgb_param_dist = {
+    'n_estimators': [50, 100, 150],
+    'max_depth': [3, 4, 5],
+    'learning_rate': [0.01, 0.05, 0.1],
+    'subsample': [0.8, 1.0],
+    'colsample_bytree': [0.8, 1.0],
+    'gamma': [0, 0.1],
+    'reg_alpha': [0, 0.01],
+    'reg_lambda': [1, 1.5]
+}
 
-# xgb = XGBRegressor(random_state=42, verbosity=0)
-# random_search_xgb = TqdmRandomizedSearchCV(
-#     xgb, xgb_param_dist, n_iter=20, cv=3, scoring='r2', n_jobs=-1, verbose=1, random_state=42
-# )
-# random_search_xgb.fit(X_sub_pca_sample, y_sample, groups=groups_sample)
+xgb = XGBRegressor(random_state=42, verbosity=0)
+random_search_xgb = TqdmRandomizedSearchCV(
+    xgb, xgb_param_dist, n_iter=20, cv=3, scoring='r2', n_jobs=-1, verbose=1, random_state=42
+)
+random_search_xgb.fit(X_sub_pca_sample, y_sample, groups=groups_sample)
 
-# print("\nXGBoost最佳参数：", random_search_xgb.best_params_)
-# print("XGBoost最佳交叉验证R²得分：", random_search_xgb.best_score_)
+print("\nXGBoost最佳参数：", random_search_xgb.best_params_)
+print("XGBoost最佳交叉验证R²得分：", random_search_xgb.best_score_)
 
-# # 用最佳参数在训练/测试集上评估
-# best_xgb = random_search_xgb.best_estimator_
-# best_xgb.fit(X_train, y_train)
-# y_pred_xgb = best_xgb.predict(X_test)
-# mse_xgb = mean_squared_error(y_test, y_pred_xgb)
-# r2_xgb = r2_score(y_test, y_pred_xgb)
-# print(f"XGBoost优化后测试集MSE: {mse_xgb}")
-# print(f"XGBoost优化后测试集R2: {r2_xgb}")
+# 用最佳参数在训练/测试集上评估
+best_xgb = random_search_xgb.best_estimator_
+best_xgb.fit(X_train, y_train)
+y_pred_xgb = best_xgb.predict(X_test)
+mse_xgb = mean_squared_error(y_test, y_pred_xgb)
+r2_xgb = r2_score(y_test, y_pred_xgb)
+print(f"XGBoost优化后测试集MSE: {mse_xgb}")
+print(f"XGBoost优化后测试集R2: {r2_xgb}")
 
-# # 可视化
-# plt.figure(figsize=(6, 6))
-# plt.scatter(y_test, y_pred_xgb, color='forestgreen', alpha=0.5)
-# plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
-# plt.title(f"XGBoost (Tuned, RandomizedSearchCV)\nR²={r2_xgb:.5f}")
-# plt.xlabel("Actual Thrust/kN")
-# plt.ylabel("Predicted Thrust/kN")
-# plt.tight_layout()
-# plt.savefig("Figures/XGBoost_Tuned_Randomized_Performance_with_PCA.png")
-# plt.close()
+# 可视化
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_pred_xgb, color='forestgreen', alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
+plt.title(f"XGBoost (Tuned, RandomizedSearchCV)\nR²={r2_xgb:.5f}")
+plt.xlabel("Actual Thrust/kN")
+plt.ylabel("Predicted Thrust/kN")
+plt.tight_layout()
+plt.savefig("Figures/XGBoost_Tuned_Randomized_Performance_with_PCA.png")
+plt.close()
 
-# # MLPRegressor参数调优（适度增加计算量，扩展参数空间，cv=5）
-# mlp_param_grid = {
-#     'hidden_layer_sizes': [(50,), (100,), (50, 50), (100, 50)],
-#     'activation': ['relu', 'tanh'],
-#     'solver': ['adam'],
-#     'alpha': [0.0001, 0.001, 0.01],
-#     'learning_rate': ['constant', 'adaptive'],
-#     'max_iter': [300, 500]
-# }
+# MLPRegressor参数调优（适度增加计算量，扩展参数空间，cv=5）
+mlp_param_grid = {
+    'hidden_layer_sizes': [(50,), (100,), (50, 50), (100, 50)],
+    'activation': ['relu', 'tanh'],
+    'solver': ['adam'],
+    'alpha': [0.0001, 0.001, 0.01],
+    'learning_rate': ['constant', 'adaptive'],
+    'max_iter': [300, 500]
+}
 
-# mlp = MLPRegressor(random_state=42)
-# grid_search_mlp = GridSearchCV(
-#     mlp, mlp_param_grid, cv=5, scoring='r2', n_jobs=-1, verbose=2
-# )
-# grid_search_mlp.fit(X_sub_pca, y, groups=groups)
+mlp = MLPRegressor(random_state=42)
+grid_search_mlp = GridSearchCV(
+    mlp, mlp_param_grid, cv=5, scoring='r2', n_jobs=-1, verbose=2
+)
+grid_search_mlp.fit(X_sub_pca, y, groups=groups)
 
-# print("\nMLPRegressor最佳参数：", grid_search_mlp.best_params_)
-# print("MLPRegressor最佳交叉验证R²得分：", grid_search_mlp.best_score_)
+print("\nMLPRegressor最佳参数：", grid_search_mlp.best_params_)
+print("MLPRegressor最佳交叉验证R²得分：", grid_search_mlp.best_score_)
 
-# # 用最佳参数在训练/测试集上评估
-# best_mlp = grid_search_mlp.best_estimator_
-# best_mlp.fit(X_train, y_train)
-# y_pred_mlp = best_mlp.predict(X_test)
-# mse_mlp = mean_squared_error(y_test, y_pred_mlp)
-# r2_mlp = r2_score(y_test, y_pred_mlp)
-# print(f"MLPRegressor优化后测试集MSE: {mse_mlp}")
-# print(f"MLPRegressor优化后测试集R2: {r2_mlp}")
+# 用最佳参数在训练/测试集上评估
+best_mlp = grid_search_mlp.best_estimator_
+best_mlp.fit(X_train, y_train)
+y_pred_mlp = best_mlp.predict(X_test)
+mse_mlp = mean_squared_error(y_test, y_pred_mlp)
+r2_mlp = r2_score(y_test, y_pred_mlp)
+print(f"MLPRegressor优化后测试集MSE: {mse_mlp}")
+print(f"MLPRegressor优化后测试集R2: {r2_mlp}")
 
-# # 可视化
-# plt.figure(figsize=(6, 6))
-# plt.scatter(y_test, y_pred_mlp, color='crimson', alpha=0.5)
-# plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
-# plt.title(f"MLPRegressor (Tuned, Expanded)\nR²={r2_mlp:.5f}")
-# plt.xlabel("Actual Thrust/kN")
-# plt.ylabel("Predicted Thrust/kN")
-# plt.tight_layout()
-# plt.savefig("Figures/MLPRegressor_Tuned_Expanded_Performance_with_PCA.png")
-# plt.close()
+# 可视化
+plt.figure(figsize=(6, 6))
+plt.scatter(y_test, y_pred_mlp, color='crimson', alpha=0.5)
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], color='black', linestyle='--')
+plt.title(f"MLPRegressor (Tuned, Expanded)\nR²={r2_mlp:.5f}")
+plt.xlabel("Actual Thrust/kN")
+plt.ylabel("Predicted Thrust/kN")
+plt.tight_layout()
+plt.savefig("Figures/MLPRegressor_Tuned_Expanded_Performance_with_PCA.png")
+plt.close()
 
 # 三组Stacking模型定义与评估
 
